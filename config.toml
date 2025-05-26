@@ -1,0 +1,8 @@
+[rpc]
+url      = "https://api.devnet.solana.com"
+
+[program]
+id       = "FWQSM8Hwu9Von2Xu1zgxQpfvdF6v66SFWUHaHAYsMAjy"
+
+[mint]
+pubkey   = "7yqDRkuWdPbj5PUQquS4XQUU9kvKutAeQNCKcTGHszv8"

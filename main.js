@@ -7,7 +7,6 @@ const path = require("path");
 
 const CONFIG_PATH = path.resolve(__dirname, "./config.toml");
 
-// ── Config helpers ───────────────────────────────────────────────────────────
 async function loadConfig(configPath = CONFIG_PATH) {
   const conf = toml.parse(await fs.readFile(configPath, "utf8"));
   return {
@@ -103,7 +102,6 @@ async function balanceTreasury() {
   return res.data;
 }
 
-// ── Demo main() ──────────────────────────────────────────────────────────────
 async function main() {
   const cfg = await loadConfig();
   const payer = await loadPayer();
@@ -163,20 +161,6 @@ async function main() {
   console.log(`Treasury balance: ${treasBal.amount} (decimals=${treasBal.decimals})`);
 
 }
-
-module.exports = {
-  loadConfig,
-  loadPayer,
-  fetchUnsigned,
-  signAndBroadcast,
-  createUser,
-  mintToTreasury,
-  transferFromTreasury,
-  depositToUser,
-  balanceUser,
-  totalSupply,
-  balanceTreasury,
-};
 
 if (require.main === module) {
   main().catch(console.error);
